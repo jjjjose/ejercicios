@@ -6,8 +6,17 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>hola esta es mi primera página web</h1>
-    <h1>esto es un live server automatico</h1>
+    <h1>Mi primera calculadora</h1>
+    <label>Ingresa dato 1</label>
+    <input type="number" id="numero1" />
+    <br />
+    <label>Ingresa dato2</label>
+    <input type="number" id="numero2" />
+    <br />
+
+    <button id="botonSumar">Sumar</button>
+    <br />
+    <pre id="resultado"></pre>
 
     <!-- variables -->
 
@@ -23,12 +32,25 @@
       // division /
       // multiplicacion *
 
+      let botonsito = document.getElementById("botonSumar");
+      let res = document.getElementById("resultado");
+      botonsito.addEventListener("click", sumar);
+
       let dato1 = 10;
       let dato2 = 33;
 
       function sumar() {
+        var input1 = parseInt(document.getElementById("numero1").value);
+        var input2 = parseInt(document.getElementById("numero2").value);
         // alert("la suma de " + dato1 + "+" + dato2 + "=" + (dato1 + dato2));
-        alert(`La suma de ${dato1}+${dato2}=${dato1 + dato2}`);
+        // alert(`La suma de ${dato1}+${dato2}=${dato1 + dato2}`);
+        // alert(
+        //   `La suma de ${input1}+${input2}=${
+        //     parseInt(input1) + parseInt(input2)
+        //   }`
+        // );
+        res.innerHTML = `La suma de ${input1}+${input2}=${input1 + input2}`;
+        // console.log(parseInt(input1) + parseInt(input2));
       }
       function restar() {
         alert(dato1 - dato2);
@@ -41,7 +63,7 @@
       }
 
       // ejecutando las funciones
-      sumar();
+      // sumar();
     </script>
   </body>
 </html>
